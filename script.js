@@ -1,4 +1,4 @@
-const images = document.querySelectorAll('.image');
+const images = document.querySelectorAll('img');
 let draggedElement = null;
 
 images.forEach((image) => {
@@ -18,8 +18,8 @@ function handleDragOver(event) {
 function handleDrop(event) {
     event.preventDefault();
     if (draggedElement && draggedElement !== event.target) {
-        const tempContent = draggedElement.textContent;
-        draggedElement.textContent = event.target.textContent;
-        event.target.textContent = tempContent;
+        const tempContent = draggedElement.src;
+        draggedElement.src = event.target.src;
+        event.target.src = tempContent;
     }
 }
